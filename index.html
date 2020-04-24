@@ -200,7 +200,7 @@ body {font-family:Arial,Helvetica,sans-serif}
           <div class="col-6">
             <div class="sub-color sub-block">
               <div class="s-title" >කොරෝනා බවට තහවුරු වූ ආසාදිතයින් </div>
-             <div class="s-icon"><span class="live"><i class="fas fa-head-side-cough"></i></span><span class="s-count" id="cases">
+             <div class="s-icon"><span class="live"><i class="fas fa-head-side-cough"></i></span><span class="s-count" id="sometotal">
              </span>
               
              </div>
@@ -276,12 +276,12 @@ function getHealthData() {
       //getting value from server
       var value = response.data;
 
-      data = "<h5>local_total_cases :</h5><b>" + value['local_total_cases'] +"<h5> Hospital :</h5><b>" + value['local_total_number_of_individuals_in_hospitals'] + "</b><br/><h5>local_deaths :</h5><b> " + value['local_deaths'] + "</b><br/><h5> local_new_deaths : </h5><b>" + value['local_new_deaths'] + "</b><br/><h5>local_recovered : </h5> <b>" + value['local_recovered'] + "</b><br/><h5>local_new_cases :</h5> <b>" + value['local_new_cases'] + "</b>";
+      data = "<h5>local_total_cases :</h5><b>" + value['cases'] +"<h5> Hospital :</h5><b>" + value['local_total_number_of_individuals_in_hospitals'] + "</b><br/><h5>local_deaths :</h5><b> " + value['local_deaths'] + "</b><br/><h5> local_new_deaths : </h5><b>" + value['local_new_deaths'] + "</b><br/><h5>local_recovered : </h5> <b>" + value['local_recovered'] + "</b><br/><h5>local_new_cases :</h5> <b>" + value['local_new_cases'] + "</b>";
       //putting values in div with id="data"
       $("#data").html(data);
       //adding value separately 
       $("#somedate").text(value['update_date_time'])
-      $("#sometotal").text(value['local_total_cases'])
+      $("#sometotal").text(value['cases'])
       
       $("#someactive").text(value['local_active_cases'])
            
