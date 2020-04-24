@@ -268,7 +268,7 @@ function getHealthData() {
   $.ajax({
     type: "GET",
     dataType: "json",
-    url: "https://corona.lmao.ninja/v2/countries/Sri%20Lanka?yesterday=true&strict=true",
+    url: "https://corona.lmao.ninja/v2/countries/Sri%20Lanka",
     data: {
       action: "get_data"
     },
@@ -281,23 +281,14 @@ function getHealthData() {
       $("#data").html(data);
       //adding value separately 
       $("#somedate").text(value['update_date_time'])
-      $("#sometotal").text(value['cases'])
-      
-      $("#someactive").text(value['local_active_cases'])
-           
-      
+      $("#sometotal").text(value['cases'])      
+      $("#someactive").text(value['local_active_cases'])                
       $("#somenew").text(value['local_new_cases'])
       $("#somehos").text(value['local_total_number_of_individuals_in_hospitals'])
       $("#somedeath").text(value['local_deaths'])
-    
-    
-    $("#somerecover").text(value['local_recovered'])
-
+      $("#somerecover").text(value['local_recovered'])
      
-
-
-
-    }
+   }
   });
 }
 
